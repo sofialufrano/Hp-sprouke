@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sprocket</title>
+    <link rel="stylesheet" href="estilos.css">
+  </head>
+
+  <body>
+    <main class="sitio">
+      <section id="inicio" class="pantalla pantalla--1" aria-label="Desktop Page 1">
+        <img
+          class="pantalla__diseno"
+          src="Desktoppage1.svg"
+          alt="Desktop Page 1"
+          width="1280"
+          height="1080"
+        >
+        <a
+          class="enlace-ver-mas"
+          href="#hp-sproke"
+          aria-label="Ver más sobre HP Sproke"
+        ></a>
+        <a
+          class="enlace-funcion"
+          href="#como-funciona"
+          aria-label="Ir a Cómo funciona"
+        ></a>
+        <a
+          class="enlace-caja"
+          href="#caja"
+          aria-label="Ir a Caja"
+        ></a>
+        <a
+          class="enlace-logo-hp"
+          href="https://www.hp.com/ar-es/contact-hp/office-locations.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visitar oficinas de HP Argentina"
+        ></a>
+        <a
+          class="enlace-inicio"
+          href="#inicio"
+          aria-label="Volver al inicio"
+        ></a>
+      </section>
+
+      <section class="pantalla pantalla--2 pantalla--animable" aria-label="HP Sproke">
+        <span id="hp-sproke" class="destino-hp-sproke" aria-hidden="true"></span>
+        <img
+          class="pantalla__diseno"
+          src="DesktopPAGE2.svg"
+          alt="Desktop Page 2"
+          width="1280"
+          height="1080"
+        >
+      </section>
+
+      <section class="pantalla pantalla--3" aria-label="Desktop Page 3">
+        <span
+          id="como-funciona"
+          class="destino-como-funciona"
+          aria-hidden="true"
+        ></span>
+        <img
+          class="pantalla__diseno"
+          src="Desktoppage3.svg"
+          alt="Desktop Page 3"
+          width="1280"
+          height="1080"
+        >
+      </section>
+
+      <section id="caja" class="pantalla pantalla--4" aria-label="Caja">
+        <img
+          class="pantalla__diseno"
+          src="Desktoppage4.svg"
+          alt="Desktop Page 4"
+          width="1280"
+          height="1080"
+        >
+      </section>
+
+      <section class="pantalla pantalla--5" aria-label="Desktop Page 5">
+        <img
+          class="pantalla__diseno"
+          src="Desktoppage5.svg"
+          alt="Desktop Page 5"
+          width="1280"
+          height="1080"
+        >
+        <a
+          class="enlace-ubicacion"
+          href="https://www.google.com/maps/place/Vedia+3616+Piso+7,+C1430DAL+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.5452443,-58.4903158,17z/data=!3m1!4b1!4m5!3m4!1s0x95bcb6c0f15dedbb:0xfa8509030eb73675!8m2!3d-34.5452487!4d-58.4877409?entry=ttu&amp;g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Ver ubicación en Google Maps"
+        ></a>
+      </section>
+    </main>
+
+    <script>
+      const pantallaAnimable = document.querySelector(".pantalla--animable");
+      const imagenAnimable = pantallaAnimable.querySelector(".pantalla__diseno");
+
+      const observador = new IntersectionObserver(
+        ([entrada]) => {
+          if (!entrada.isIntersecting) {
+            return;
+          }
+
+          const rutaImagen = imagenAnimable.getAttribute("src").split("?")[0];
+          imagenAnimable.setAttribute("src", `${rutaImagen}?animacion=${Date.now()}`);
+          observador.disconnect();
+        },
+        { threshold: 0.2 }
+      );
+
+      observador.observe(pantallaAnimable);
+    </script>
+  </body>
+</html>

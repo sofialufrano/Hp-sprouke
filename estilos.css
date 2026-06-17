@@ -1,0 +1,119 @@
+:root {
+  --ancho-pantalla: 1280px;
+  --alto-pantalla: 1080px;
+  --color-fondo: #ffffff;
+
+  background-color: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-width: var(--ancho-pantalla);
+  margin: 0;
+}
+
+body {
+  background-color: var(--color-fondo);
+}
+
+.sitio {
+  width: var(--ancho-pantalla);
+  margin: 0;
+}
+
+.pantalla {
+  position: relative;
+  width: var(--ancho-pantalla);
+  height: var(--alto-pantalla);
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--color-fondo);
+  flex: none;
+}
+
+.pantalla__diseno {
+  display: block;
+  width: var(--ancho-pantalla);
+  height: var(--alto-pantalla);
+  max-width: none;
+  margin: 0;
+  object-fit: fill;
+}
+
+.enlace-ver-mas {
+  position: absolute;
+  z-index: 1;
+  top: 654px;
+  left: 74px;
+  width: 181px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.destino-hp-sproke {
+  position: absolute;
+  top: 630px;
+  left: 0;
+}
+
+.enlace-funcion {
+  position: absolute;
+  z-index: 1;
+  top: 55px;
+  left: 845px;
+  width: 175px;
+  height: 55px;
+  cursor: pointer;
+}
+
+.destino-como-funciona {
+  position: absolute;
+  top: 250px;
+  left: 0;
+}
+
+.enlace-caja {
+  position: absolute;
+  z-index: 1;
+  top: 55px;
+  left: 1090px;
+  width: 145px;
+  height: 55px;
+  cursor: pointer;
+}
+
+.enlace-logo-hp {
+  position: absolute;
+  z-index: 1;
+  top: 27px;
+  left: 64px;
+  width: 111px;
+  height: 90px;
+  cursor: pointer;
+}
+
+.enlace-inicio {
+  position: absolute;
+  z-index: 1;
+  top: 55px;
+  left: 350px;
+  width: 155px;
+  height: 55px;
+  cursor: pointer;
+}
+
+.enlace-ubicacion {
+  position: absolute;
+  z-index: 1;
+  top: 820px;
+  left: 275px;
+  width: 280px;
+  height: 125px;
+  cursor: pointer;
+}
